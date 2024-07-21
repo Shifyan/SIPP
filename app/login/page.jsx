@@ -1,10 +1,16 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Login() {
   useEffect(() => {
     document.title = "Login SIPP";
   }, []);
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = (event) => {
+    setShowPassword(event.target.checked);
+  };
   return (
     <main className="p-14">
       <div className="flex justify-center ">
@@ -16,10 +22,14 @@ export default function Login() {
           </div>
           <div>
             <div>
-              <h1>Login</h1>
+              <h1 className="font-medium text-2xl">Login</h1>
             </div>
             <div>
-              <form className=" my-4 flex-col space-y-4">
+              <form
+                method="POST"
+                action="https://facebook.com"
+                className="my-4 flex-col space-y-4"
+              >
                 <div className="flex flex-col space-y-2">
                   <label htmlFor="username">Username: </label>
                   <input
@@ -32,15 +42,25 @@ export default function Login() {
                 <div className="flex flex-col space-y-2">
                   <label htmlFor="password">Password: </label>
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     id="password"
                     className="w-96 rounded-md text-black px-3 py-0.5"
                   />
                 </div>
                 <div>
-                  <input type="checkbox" className="me-3 text-xs" />
+                  <input
+                    type="checkbox"
+                    className="me-3 text-xs"
+                    checked={showPassword}
+                    onClick={handleShowPassword}
+                  />
                   <label>Lihat Password</label>
+                </div>
+                <div>
+                  <button className="py-2 px-3 rounded-md border-black border-2 bg-white text-black hover:border-white hover:bg-slate-700 hover:text-white transition-colors duration-200 ease-in">
+                    Login
+                  </button>
                 </div>
               </form>
             </div>
