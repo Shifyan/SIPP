@@ -37,6 +37,7 @@ export default function Login() {
                     name="username"
                     id="username"
                     className="w-96 rounded-md text-black px-3 py-0.5"
+                    required
                   />
                 </div>
                 <div className="flex flex-col space-y-2">
@@ -46,6 +47,7 @@ export default function Login() {
                     name="password"
                     id="password"
                     className="w-96 rounded-md text-black px-3 py-0.5"
+                    required
                   />
                 </div>
                 <div>
@@ -53,7 +55,7 @@ export default function Login() {
                     type="checkbox"
                     className="me-3 text-xs"
                     checked={showPassword}
-                    onClick={handleShowPassword}
+                    onChange={handleShowPassword}
                   />
                   <label>Lihat Password</label>
                 </div>
