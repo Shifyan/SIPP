@@ -2,7 +2,7 @@
 import { useState } from "react";
 import SideBar from "@/app/components/sidebar";
 import UserHeader from "@/app/components/userHeader";
-const Home = () => {
+const Keaktifan = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Keaktifan;
